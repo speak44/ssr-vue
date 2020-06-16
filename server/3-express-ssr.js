@@ -8,7 +8,7 @@ const Vue = require ('vue')
 const {createRenderer} = require('vue-server-renderer') // 获取到工厂函数
 // 用渲染器来渲染vue实例
 const renderer =createRenderer() // 就可以得到一个渲染器
-server.get('/', (req,res)=>{
+server.get('*', (req,res)=>{
   // 每次用户刷新 都渲染出一个全新的vue出来
   const app = new Vue({
     template:'<div @click="onClick">{{context}}</div>',

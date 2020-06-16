@@ -4,6 +4,10 @@ import Home from '../views/Home.vue'
 
 Vue.use(VueRouter)
 
+
+  //作为一个工厂函数，每次用户请求返回一个新的router实例
+
+
   const routes = [
   {
     path: '/',
@@ -20,10 +24,22 @@ Vue.use(VueRouter)
   }
 ]
 
-const router = new VueRouter({
-  mode: 'history',
-  base: process.env.BASE_URL,
-  routes
-})
 
-export default router
+
+
+// const router = new VueRouter({
+//   mode: 'history',
+//   base: process.env.BASE_URL,
+//   routes
+// })
+
+// export default router
+
+//作为一个工厂函数，每次用户请求返回一个新的router实例
+export default function createRouter(){
+  return new VueRouter({
+    mode: 'history',
+    base: process.env.BASE_URL,
+    routes
+  })
+}
