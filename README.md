@@ -1,24 +1,11 @@
 # ssr-vue
-
+vue 服务端渲染SSR初识
 ## Project setup
 ```
 yarn install
 ```
+## 项目打包
+npm run build
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
-
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## node服务
+node 4-ssr.js
