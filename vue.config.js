@@ -11,10 +11,10 @@ module.exports = {
   css: {
     extract: false
   },
-  outputDir: './dist/'+target, // 输出路径  target看上面判断
-  configureWebpack: () => ({ // 输入路径
+  outputDir: './dist/'+target,
+  configureWebpack: () => ({
     // 将 entry 指向应用程序的 server / client 文件
-    entry: `./src/entry-${target}.js`, // 入口
+    entry: `./src/entry-${target}.js`,
     // 对 bundle renderer 提供 source map 支持
     devtool: 'source-map',
     // target设置为node使webpack以Node适用的方式处理动态导入，

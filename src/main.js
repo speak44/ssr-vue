@@ -7,7 +7,7 @@ Vue.config.productionTip = false
 // 每个请求获取一个单独的vue实例
 // 调用者是entry-server(首屏渲染) 会传递参数是上下文对象
 export function createApp(context){
-  const router = createRouter
+  const router = createRouter()
   const app =new Vue({
     router,
     context, // 利用context可以拿到一些参数
@@ -16,4 +16,3 @@ export function createApp(context){
   // 导出app实例以及router实例
   return {app, router}
 }
-
