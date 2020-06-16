@@ -2,6 +2,7 @@
   <div class="home">
     <img alt="Vue logo" src="../assets/logo.png">
     <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <p @click="$store.commit('add')">{{$store.state.count}}</p>
   </div>
 </template>
 
@@ -13,6 +14,10 @@ export default {
   name: 'Home',
   components: {
     HelloWorld
+  },
+    asyncData({store}) { // 约定预取逻辑编写在预取钩子asyncData中
+    // 触发 action 后，返回 Promise 以便确定请求结果
+    return store.dispatch("getCount");
   }
 }
 </script>

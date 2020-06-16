@@ -2,7 +2,13 @@
 //在浏览器执行的代码
 import {createApp} from './main'
 // 创建vue实例
-const {app, router}  =createApp()
+const {app, router, store}  =createApp()
+
+if(window.__INITIAL_STATE__){
+  console.log(window.__INITIAL_STATE__, 'window.__INITIAL_STATE__');
+  // 恢复state
+  store.replaceState(window.__INITIAL_STATE__)
+}
 
 //等待router就绪
 router.onReady(()=>{
